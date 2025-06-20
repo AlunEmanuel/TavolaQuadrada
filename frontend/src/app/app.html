@@ -1,0 +1,24 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div style="margin: 20px;">
+  <h2>Create New Item</h2>
+  <input type="text" [(ngModel)]="newItem.name" placeholder="Item Name">
+  <input type="text" [(ngModel)]="newItem.description" placeholder="Item Description">
+  <button (click)="createItem()">Add Item</button>
+</div>
+
+<div style="margin: 20px;">
+  <h2>Items List</h2>
+  <ul *ngIf="items.length > 0; else noItems">
+    <li *ngFor="let item of items">
+      {{ item.name }} - {{ item.description }}
+    </li>
+  </ul>
+  <ng-template #noItems>
+    <p>No items found.</p>
+  </ng-template>
+</div>

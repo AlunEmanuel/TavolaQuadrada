@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mesas de RPG</h1>
+<a href="{% url 'add' %}">Adicionar Nova Mesa</a>
+<ul>
+    {% for mesa in mesas %}
+    <li>
+        <h2>{{ mesa.nome }}</h2>
+        <p>{{ mesa.descricao }}</p>
+        <p>Mestre: {{ mesa.mestre.get_full_name|default:mesa.mestre.username }}</p>
+        <p>Jogadores: {{ mesa.numero_max_jogadores }}</p>
+        <p>Categoria: {{ mesa.categoria }}</p>
+        {% if user == mesa.mestre %}
+            <a href="{% url 'edit' mesa.id %}">Editar</a>
+            <a href="{% url 'delete' mesa.id %}">Deletar</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

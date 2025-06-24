@@ -1,0 +1,140 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: lightblue;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    margin: 0;
+}
+
+.header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header .user span {
+    color: white;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form p {
+    margin-bottom: 10px;
+}
+
+button {
+    background: #337ab7;
+    color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+    animation: change-color 5s ease-in-out infinite;
+}
+
+@keyframes change-color {
+    0% {
+        background-color: #337ab7;
+    }
+    25% {
+        background-color: #5cb85c;
+    }
+    50% {
+        background-color: #f0ad4e;
+    }
+    75% {
+        background-color: #d9534f;
+    }
+    100% {
+        background-color: #337ab7;
+    }
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0 10px;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
+}
+
+/* Carousel Customization */
+.carousel {
+    max-height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 500px; /* Match the carousel's max-height */
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2; /* Ensure caption is above the overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
